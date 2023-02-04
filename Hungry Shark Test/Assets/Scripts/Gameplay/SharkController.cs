@@ -38,11 +38,15 @@ public class SharkController : MonoBehaviour
 		}
 		else if (Input.GetKeyUp (KeyCode.Space))
 		{
-			StopCoroutine (chargingRoutine);
+			if (chargingRoutine != null) StopCoroutine (chargingRoutine);
+			CameraShake.Instance.ScreenShakeValue (0f);
 			body.AddRelativeForce(Vector2.right * releaseSpeed);
 		}
 		
-		transform.rotation *= Quaternion.Euler (0f, 0f , rotateSpeed * Time.deltaTime * Input.GetAxis ("Horizontal"));
+		transform.rotation *= Quaternion.Euler (0f, 0f , rotateSpeed * Time.deltaTime * -Input.GetAxis ("Horizontal"));
+		
+		if (Mathf.Abs (transform.position.y) > 7.34f) transform.position += Vector3.up * Mathf.Sign (-transform.position.y)*7.34f*2f;
+		if (Mathf.Abs (transform.position.x) > 9.69f) transform.position += Vector3.right * Mathf.Sign (-transform.position.x)*9.69f*2f;
 	}
 	
 	// Charging Animation
@@ -53,6 +57,7 @@ public class SharkController : MonoBehaviour
 		while (lp < 1f)
 		{
 			lp += holdTimeSpeed * Time.deltaTime * 0.1f;
+			CameraShake.Instance.ScreenShakeValue (lp);
 			
 			releaseSpeed = Mathf.Lerp (releaseSpeedMin, releaseSpeedMax, holdCurve.Evaluate (lp));
 			
