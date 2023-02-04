@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1539644187538027358}
   - component: {fileID: 5625378025471240477}
   - component: {fileID: 2897460913980223174}
+  - component: {fileID: -2082897510505529606}
   m_Layer: 0
   m_Name: Bones
   m_TagString: Untagged
@@ -121,3 +122,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2082897510505529606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197206616627005185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef86df0aae9c4df4999bd93dfee2f224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

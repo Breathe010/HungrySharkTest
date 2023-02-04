@@ -47,6 +47,7 @@ public class SharkController : MonoBehaviour
 		
 		if (Mathf.Abs (transform.position.y) > 7.34f) transform.position += Vector3.up * Mathf.Sign (-transform.position.y)*7.34f*2f;
 		if (Mathf.Abs (transform.position.x) > 9.69f) transform.position += Vector3.right * Mathf.Sign (-transform.position.x)*9.69f*2f;
+
 	}
 	
 	// Charging Animation
